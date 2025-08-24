@@ -44,14 +44,3 @@ End-to-end **AWS Data Engineering Pipeline** that ingests data from **Kafka (via
 
 ---
 
-## 🔧 Glue Scripts
-- `weather_transform.py` → Cleans and transforms raw weather data → curated parquet  
-- `stocks_transform.py` → Cleans and transforms raw stocks data → curated parquet  
-
----
-
-## 🔗 Power BI Connection
-Option 1: Connect Power BI directly to Athena.  
-Option 2: Run export scripts to convert parquet → CSV:
-- `export_weather_csv.py`  
-- `export_stocks_csv.py`  
