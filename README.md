@@ -1,22 +1,39 @@
 # ETL-Using-AWS-Services
 
-## 🚀 Architecture
-1. **Kafka → S3 (raw-data-24-08)**  
-   - Weather + Stocks raw data stored.  
+# AWS Data Pipeline – Stocks & Weather
 
-2. **Glue Crawlers**  
-   - `weather_crawler` → raw weather data  
-   - `stocks_crawler` → raw stocks data  
+End-to-end **AWS Data Engineering Pipeline** that ingests data from **Kafka (via Docker + Python)** into **S3 (Raw)**, transforms it using **AWS Glue (PySpark)**, stores curated Parquet datasets in **S3 (Curated)**, and exposes it for querying via **Athena** and visualization in **Power BI**.  
 
-3. **Glue ETL Jobs**  
-   - `weather_transform` → process raw → curated parquet (`ready-weather/`)  
-   - `stocks_transform` → process raw → curated parquet (`ready-stocks/`)  
+---
 
-4. **Athena**  
-   - Query raw + curated data  
+## 🏗️ Architecture
 
-5. **Power BI**  
-   - Connects to curated-data-24-08 or use Python export scripts to CSV.  
+![Architecture](docs/architecture.png)
+
+**Flow:**
+1. **Kafka (Docker + Python)** → Streams **stocks** and **weather** data into **S3 Raw**.
+2. **AWS Glue Crawlers** → Crawl `raw-data-24-08` bucket and create schemas in Glue Data Catalog.
+3. **AWS Glue ETL Jobs** →  
+   - `stocks_transform.py` → writes curated parquet to `s3://curated-data-24-08/ready_stocks/`  
+   - `weather_transform.py` → writes curated parquet to `s3://curated-data-24-08/ready_weather/`
+4. **Athena** → Query raw and curated datasets directly.
+5. **Power BI** → Uses Athena connector for dashboards & reporting.
+
+---
+
+## 📂 Buckets
+
+- **Raw Data** → `s3://raw-data-24-08/`  
+  - `stocks/`  
+  - `weather/`  
+
+- **ETL Scripts** → `s3://etl-script-24-08/`  
+  - `jobs/stocks_transform.py`  
+  - `jobs/weather_transform.py`  
+
+- **Curated Data** → `s3://curated-data-24-08/`  
+  - `ready_stocks/` (partitioned parquet)  
+  - `ready_weather/` (partitioned parquet)  
 
 ---
 
