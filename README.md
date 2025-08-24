@@ -1,7 +1,5 @@
 # ETL-Using-AWS-Services
 
-# AWS Data Engineering Pipeline (Kafka → S3 → Glue → Athena → Power BI)
-
 ## 🚀 Architecture
 1. **Kafka → S3 (raw-data-24-08)**  
    - Weather + Stocks raw data stored.  
