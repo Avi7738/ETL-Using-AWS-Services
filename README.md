@@ -8,7 +8,6 @@ End-to-end **AWS Data Engineering Pipeline** that ingests data from **Kafka (via
 
 ## 🏗️ Architecture
 
-![Architecture]([docs/architecture.png](https://github.com/Avi7738/ETL-Using-AWS-Services/blob/main/architecture.png?raw=true))
 <img width="1748" height="1240" alt="Image" src="https://github.com/user-attachments/assets/692b682f-d83d-451c-ae8e-9ff28040e159" />
 
 **Flow:**
@@ -22,7 +21,7 @@ End-to-end **AWS Data Engineering Pipeline** that ingests data from **Kafka (via
 
 ---
 
-## 📂 Buckets
+## 📂 Folder Structure
 ```
 aws-data-pipeline-repo/
 │── fetching-data-script/        # Kafka → S3 Raw ingestion scripts
@@ -35,12 +34,5 @@ aws-data-pipeline-repo/
 │   └── weather_transform.py
 
 ```
----
 
-## 🗂️ Folder Structure
-- `glue-scripts/` → Glue ETL jobs (PySpark scripts)  
-- `powerbi/` → Power BI integration scripts  
-- `s3-buckets/` → Documentation of raw + curated storage layout  
-
----
 
