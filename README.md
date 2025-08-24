@@ -8,7 +8,7 @@ End-to-end **AWS Data Engineering Pipeline** that ingests data from **Kafka (via
 
 ## 🏗️ Architecture
 
-![Architecture](docs/architecture.png)
+![Architecture]([docs/architecture.png](https://github.com/Avi7738/ETL-Using-AWS-Services/blob/main/architecture.png?raw=true))
 
 **Flow:**
 1. **Kafka (Docker + Python)** → Streams **stocks** and **weather** data into **S3 Raw**.
