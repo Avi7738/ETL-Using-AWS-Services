@@ -22,7 +22,7 @@ End-to-end **AWS Data Engineering Pipeline** that ingests data from **Kafka (via
 ---
 
 ## 📂 Buckets
-
+```
 aws-data-pipeline-repo/
 │── fetching-data-script/        # Kafka → S3 Raw ingestion scripts
 │   ├── stocks_producer.py
@@ -32,26 +32,8 @@ aws-data-pipeline-repo/
 │── glue-etl-job-script/         # AWS Glue ETL jobs (PySpark)
 │   ├── stocks_transform.py
 │   └── weather_transform.py
-│
-│── infra/terraform/             # Terraform IaC for Glue Crawlers, Jobs, IAM
-│   ├── main.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   └── terraform.tfvars.example
-│
-│── athena/sql/                  # SQL scripts for Athena (DBs, tables, queries)
-│   ├── create_raw_db.sql
-│   ├── create_curated_db.sql
-│   ├── create_curated_tables.sql
-│   ├── repair_partitions.sql
-│   └── sample_queries.sql
-│
-│── powerbi/                     # Notes for connecting Power BI to Athena
-│── docs/                        # Diagrams & docs (architecture.png)
-│── README.md
-│── .gitignore
 
-
+```
 ---
 
 ## 🗂️ Folder Structure
